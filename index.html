@@ -17,7 +17,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
  
-<!-- Dados estruturados para o Google -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,8 +49,11 @@ section{padding:96px 0}
 /* NAV */
 nav{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(0,6,50,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(248,221,78,.18)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
-.brand{font-family:'Anton',sans-serif;font-size:1.6rem;letter-spacing:.06em;color:var(--yellow);text-decoration:none}
-.brand small{font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.3em;color:var(--white);margin-left:10px;text-transform:uppercase}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{height:42px;width:auto}
+.brand-text {display: flex; flex-direction: column;}
+.brand span{font-family:'Anton',sans-serif;font-size:1.4rem;letter-spacing:.06em;color:var(--yellow);line-height:1}
+.brand small{font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:600;letter-spacing:.25em;color:var(--white);text-transform:uppercase}
 .links{display:flex;gap:28px;align-items:center}
 .links a{text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:color .25s}
 .links a:hover{color:var(--yellow)}
@@ -66,7 +68,7 @@ nav{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(0,6,50,.82);bac
 #inicio::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(0,6,50,.78) 0%,rgba(0,6,50,.25) 60%,transparent 100%)}
 .hero-in{position:relative;z-index:2; display: flex; align-items: center; justify-content: space-between; gap: 40px;}
 .hero-text {flex: 1;}
-.hero-img {flex: 1; max-width: 400px; display: flex; justify-content: center;}
+.hero-img {flex: 1; max-width: 420px; display: flex; justify-content: center;}
 .hero-img img {border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 2px solid var(--yellow); max-width: 100%;}
 #inicio h1{font-size:clamp(2.8rem,6.5vw,5rem);text-transform:uppercase;max-width:900px}
 #inicio h1 span{color:var(--yellow)}
@@ -98,12 +100,14 @@ nav{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(0,6,50,.82);bac
 .card .go{display:inline-block;margin-top:18px;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white)}
 .card:hover .go{color:var(--yellow)}
  
-/* NÚMEROS */
-.stats{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:44px}
+/* NÚMEROS E QUALIFICAÇÕES */
+.qualify-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 40px;}
+.qualify-img img {border-radius: 12px; border: 2px solid var(--yellow); box-shadow: 0 10px 30px rgba(0,0,0,0.5); width: 100%;}
+.stats{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:30px}
 .stat{border-left:3px solid var(--yellow);padding:6px 0 6px 20px}
 .stat b{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:3.4rem;color:var(--yellow);line-height:1}
 .stat span{color:var(--muted);font-size:.92rem}
-.certs{margin-top:44px;display:grid;gap:12px}
+.certs{margin-top:30px;display:grid;gap:12px}
 .cert{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 20px;border:1px solid rgba(248,221,78,.2);border-radius:12px;background:rgba(255,255,255,.03)}
 .cert em{font-style:normal;color:var(--yellow);font-weight:600}
  
@@ -117,7 +121,7 @@ nav{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(0,6,50,.82);bac
  
 /* GALERIA */
 .gallery{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));margin-top:44px}
-.gallery figure{aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:1px solid rgba(248,221,78,.2);cursor:zoom-in;background:var(--blue)}
+.gallery figure{aspect-ratio:3/4;border-radius:14px;overflow:hidden;border:1px solid rgba(248,221,78,.2);cursor:zoom-in;background:var(--blue)}
 .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .gallery figure:hover img{transform:scale(1.07)}
 dialog{border:none;background:transparent;max-width:94vw;max-height:94vh;margin:auto}
@@ -150,7 +154,7 @@ footer b{color:var(--yellow);font-weight:600}
 .js .reveal.in{opacity:1;transform:none}
  
 @media(max-width:820px){
-  .hero-in {flex-direction: column; text-align: center;}
+  .hero-in, .qualify-grid {flex-direction: column; text-align: center;}
   .burger{display:block}
   .links{position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:rgba(0,6,50,.97);max-height:0;overflow:hidden;transition:max-height .35s}
   .links.open{max-height:420px;border-bottom:1px solid rgba(248,221,78,.2)}
@@ -172,7 +176,13 @@ footer b{color:var(--yellow);font-weight:600}
  
 <nav>
   <div class="wrap nav-in">
-    <a href="#inicio" class="brand">LMRC<small>Eletricista</small></a>
+    <a href="#inicio" class="brand">
+      <img src="Proposta LMRC Eletricista.png" alt="LMRC Logo">
+      <div class="brand-text">
+        <span>LMRC</span>
+        <small>Eletricista</small>
+      </div>
+    </a>
     <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
     <div class="links" id="links">
       <a href="#servicos">Serviços</a>
@@ -206,8 +216,8 @@ footer b{color:var(--yellow);font-weight:600}
         </div>
     </div>
     <div class="hero-img reveal">
-        <!-- Foto de Perfil do Luciano (Precisa subir no GitHub com o nome "luciano-perfil.jpg") -->
-        <img src="luciano-perfil.jpg" alt="Luciano Eletricista">
+        <!-- Foto principal de capa com o Luciano apontando para o quadro -->
+        <img src="IMG-20261019-WA0064.jpg" alt="Luciano Eletricista">
     </div>
   </div>
 </header>
@@ -255,12 +265,22 @@ footer b{color:var(--yellow);font-weight:600}
     <p class="eyebrow reveal">Experiência e segurança</p>
     <h2 class="reveal">Quem executa o seu serviço</h2>
     <p class="lead reveal">Mais de duas décadas de campo, com cursos e normas de segurança no currículo.</p>
-    <div class="stats reveal">
-      <div class="stat"><b data-count="27">27</b><span>anos de experiência como eletricista</span></div>
-      <div class="stat"><b data-count="3">3</b><span>certificados de segurança (NR10 Básico, NR10 SEP e NR35)</span></div>
-      <div class="stat"><b data-count="260">260</b><span>horas no curso de Eletricista de Redes de Distribuição de Energia</span></div>
+    
+    <div class="qualify-grid">
+      <div class="qualify-img reveal">
+        <!-- Foto de obra em destaque nas qualificações -->
+        <img src="IMG-20261021-WA0037.jpg" alt="Equipamentos e Segurança LMRC">
+      </div>
+      <div>
+        <div class="stats reveal">
+          <div class="stat"><b data-count="27">27</b><span>anos de experiência como eletricista</span></div>
+          <div class="stat"><b data-count="3">3</b><span>certificados de segurança (NR10 Básico, NR10 SEP e NR35)</span></div>
+          <div class="stat"><b data-count="260">260</b><span>horas no curso de Eletricista de Redes de Distribuição de Energia</span></div>
+        </div>
+      </div>
     </div>
-    <div class="certs reveal">
+
+    <div class="certs reveal" style="margin-top: 40px;">
       <div class="cert"><span>NR10 Básico</span><em>Dezembro de 2024</em></div>
       <div class="cert"><span>NR10 Complementar SEP</span><em>Dezembro de 2024</em></div>
       <div class="cert"><span>NR35 Trabalho em Altura</span><em>Dezembro de 2024</em></div>
@@ -289,13 +309,11 @@ footer b{color:var(--yellow);font-weight:600}
     <p class="lead reveal">Toque em uma foto para ampliar.</p>
     
     <div class="gallery" id="gallery">
-      <!-- Fotos da galeria (Precisam ser subidas no GitHub com esses nomes) -->
-      <figure class="reveal"><img src="obra1.jpg" alt="Obra de Eletricista 1" loading="lazy"></figure>
-      <figure class="reveal"><img src="obra2.jpg" alt="Obra de Eletricista 2" loading="lazy"></figure>
-      <figure class="reveal"><img src="obra3.jpg" alt="Obra de Eletricista 3" loading="lazy"></figure>
-      <figure class="reveal"><img src="obra4.jpg" alt="Obra de Eletricista 4" loading="lazy"></figure>
-      <figure class="reveal"><img src="obra5.jpg" alt="Obra de Eletricista 5" loading="lazy"></figure>
-      <figure class="reveal"><img src="obra6.jpg" alt="Obra de Eletricista 6" loading="lazy"></figure>
+      <figure class="reveal"><img src="IMG-20261021-WA0068.jpg" alt="Eletricista arrumando quadro de luz" loading="lazy"></figure>
+      <figure class="reveal"><img src="IMG-20261021-WA0037.jpg" alt="Quadro elétrico organizado" loading="lazy"></figure>
+      <figure class="reveal"><img src="IMG-20261021-WA0062.jpg" alt="Eletricista em escada fazendo instalação" loading="lazy"></figure>
+      <figure class="reveal"><img src="IMG-20261021-WA0078.jpg" alt="Painel elétrico industrial com barramento" loading="lazy"></figure>
+      <figure class="reveal"><img src="IMG-20261021-WA0038.jpg" alt="Quadro elétrico com DPS vermelho" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -336,7 +354,6 @@ footer b{color:var(--yellow);font-weight:600}
  
 <script>
 /* ============ CONFIGURAÇÃO ============ */
-// Número do WhatsApp configurado corretamente!
 const WA_NUMBER = "5541999452376";
 /* ====================================== */
  
