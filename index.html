@@ -46,16 +46,16 @@ h2{font-size:clamp(2rem,5vw,3.2rem);text-transform:uppercase;margin-bottom:18px}
 .lead{color:var(--muted);max-width:640px;font-size:1.05rem}
 section{padding:96px 0}
  
-/* NAV */
+/* NAV - Logo à esquerda */
 nav{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(0,6,50,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(248,221,78,.18)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:38px;width:auto}
 .links{display:flex;gap:28px;align-items:center}
 .links a{text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:color .25s}
 .links a:hover{color:var(--yellow)}
 .links .cta{background:var(--yellow);color:var(--navy);padding:10px 18px;border-radius:999px}
 .links .cta:hover{color:var(--navy);filter:brightness(1.08)}
-.brand-right{display:flex;align-items:center;text-decoration:none}
-.brand-right img{height:38px;width:auto}
 .burger{display:none;background:none;border:1px solid rgba(248,221,78,.5);color:var(--yellow);width:44px;height:44px;border-radius:10px;font-size:1.3rem;cursor:pointer}
  
 /* HERO */
@@ -107,15 +107,6 @@ nav{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(0,6,50,.82);bac
 .certs{margin-top:30px;display:grid;gap:12px}
 .cert{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 20px;border:1px solid rgba(248,221,78,.2);border-radius:12px;background:rgba(255,255,255,.03)}
 .cert em{font-style:normal;color:var(--yellow);font-weight:600}
-
-/* CERTIFICADOS DOWNLOAD */
-.cert-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:30px}
-.cert-card{background:rgba(0,19,155,.2);border:1px solid rgba(248,221,78,.3);padding:24px 16px;border-radius:14px;text-align:center;transition:border-color .3s;display:flex;flex-direction:column;justify-content:space-between}
-.cert-card:hover{border-color:var(--yellow)}
-.cert-card h3{color:var(--yellow);font-size:1.3rem;margin-bottom:8px}
-.cert-card p{color:var(--muted);font-size:.85rem;margin-bottom:16px;flex-grow:1}
-.btn-cert{display:inline-block;background:var(--yellow);color:var(--navy);font-weight:700;padding:10px 20px;border-radius:999px;text-decoration:none;font-size:.85rem;transition:filter .2s}
-.btn-cert:hover{filter:brightness(1.1)}
  
 /* PROCESSO */
 #processo{background:var(--navy-2)}
@@ -181,19 +172,18 @@ footer b{color:var(--yellow);font-weight:600}
  
 <nav>
   <div class="wrap nav-in">
+    <a href="#inicio" class="brand">
+      <img src="Proposta LMRC Eletricista.png" alt="LMRC Logo">
+    </a>
     <div class="links" id="links">
       <a href="#servicos">Serviços</a>
       <a href="#qualificacoes">Qualificações</a>
-      <a href="#certificados">Certificados</a>
       <a href="#processo">Como funciona</a>
       <a href="#obras">Obras</a>
       <a href="#faq">Dúvidas</a>
       <a href="#contato" class="cta" data-wa data-msg="Olá, Luciano! Vi o seu site e gostaria de um orçamento.">Orçamento</a>
     </div>
     <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
-    <a href="#inicio" class="brand-right">
-      <img src="Proposta LMRC Eletricista.png" alt="LMRC Logo">
-    </a>
   </div>
 </nav>
  
@@ -288,38 +278,6 @@ footer b{color:var(--yellow);font-weight:600}
     </div>
   </div>
 </section>
-
-<!-- SEÇÃO DE CERTIFICADOS ATUALIZADA (_2) -->
-<section id="certificados" style="background: var(--navy-2);">
-  <div class="wrap">
-    <p class="eyebrow reveal">Documentação oficial</p>
-    <h2 class="reveal">Certificados e Normas de Segurança</h2>
-    <p class="lead reveal">Profissional qualificado e certificado conforme as normas regulamentadoras vigentes.</p>
-    
-    <div class="cert-grid">
-      <div class="cert-card reveal">
-        <h3>Certificado NR10</h3>
-        <p>Segurança em Instalações e Serviços em Eletricidade.</p>
-        <a href="Certificado_NR10_LucianoRibeiro_2.pdf" target="_blank" class="btn-cert">Ver Certificado</a>
-      </div>
-      <div class="cert-card reveal">
-        <h3>Certificado SEP</h3>
-        <p>Sistema Elétrico de Potência (NR10 Complementar).</p>
-        <a href="Certificado_SEP_LucianoRibeiro_2.pdf" target="_blank" class="btn-cert">Ver Certificado</a>
-      </div>
-      <div class="cert-card reveal">
-        <h3>Certificado NR35</h3>
-        <p>Trabalho em Altura com total segurança.</p>
-        <a href="Certificado_NR35_LucianoRibeiro_2.pdf" target="_blank" class="btn-cert">Ver Certificado</a>
-      </div>
-      <div class="cert-card reveal">
-        <h3>Redes de Distribuição</h3>
-        <p>Eletricista de Redes de Distribuição de Energia (260h).</p>
-        <a href="Certificado_Redes_LucianoRibeiro_2.jpg" target="_blank" class="btn-cert">Ver Certificado</a>
-      </div>
-    </div>
-  </div>
-</section>
  
 <section id="processo">
   <div class="wrap">
@@ -341,7 +299,6 @@ footer b{color:var(--yellow);font-weight:600}
     <p class="lead reveal">Toque em uma foto para ampliar.</p>
     
     <div class="gallery" id="gallery">
-      <!-- As 6 fotos escolhidas -->
       <figure class="reveal"><img src="WhatsApp Image 2026-10-19 at 20.32.15 (2).jpeg" alt="Luciano trabalhando na obra externo" loading="lazy"></figure>
       <figure class="reveal"><img src="WhatsApp Image 2026-10-19 at 20.32.15 (1).jpeg" alt="Eletricista na escada em altura" loading="lazy"></figure>
       <figure class="reveal"><img src="WhatsApp Image 2026-10-19 at 20.39.57 (1).jpeg" alt="Luminária e duto instalado no teto" loading="lazy"></figure>
